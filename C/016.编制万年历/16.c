@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 long int f(int year,int month)
 {/*f(年，月)＝年－1，如月<3;否则，f(年，月)＝年*/
 	if(month<3) return year-1;
@@ -26,11 +26,10 @@ int w(int year,int month,int day)
 int date[12][6][7];
 int day_tbl[ ][12]={{31,28,31,30,31,30,31,31,30,31,30,31},
 		    {31,29,31,30,31,30,31,31,30,31,30,31}};
-main()
+int main()
 {int sw,leap,i,j,k,wd,day;
  int year;/*年*/
  char title[]="SUN MON TUE WED THU FRI SAT";
-clrscr();
 printf("Please input the year whose calendar you want to know: ");/*输入年*/
 scanf("%d%*c",&year);/*输入年份值和掠过值后的回车*/
 sw=w(year,1,1);
@@ -74,5 +73,5 @@ for(i=0;i<6;i++)
 }
 puts("=================================================================|");
 puts("\n Press any key to quit...");
-getch();
-}
+return 0;
+}
